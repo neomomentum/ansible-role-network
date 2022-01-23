@@ -12,6 +12,9 @@ IPV6INIT=yes
 {% if 'mtu' in item and item['mtu'] %}
 MTU={{ item.mtu }}
 {% endif %}
+{% if 'persistent_dhclient' in item and item['persistent_dhclient'] %}
+PERSISTENT_DHCLIENT={{ item.persistent_dhclient }}
+{% endif %}
 ONBOOT=yes
 {% if 'networkmanager' in item %}
 NM_CONTROLLED={{ item.networkmanager }}
