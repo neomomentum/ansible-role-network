@@ -2,5 +2,7 @@
 # Handler for network configuration
 
 - name: restart network
+  service:
+    name: "{{ 'NetworkManager' if  (ansible_distribution == 'CentOS') else 'network' }}"
+    state: restarted
   become: true
-  service: name=network state=restarted
